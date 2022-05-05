@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nchabli <nchabli@student.42lyon.fr>        +#+  +:+       +#+         #
+#    By: nchabli <nchabli@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/04 10:44:48 by nchabli           #+#    #+#              #
-#    Updated: 2022/04/20 15:52:36 by nchabli          ###   ########lyon.fr    #
+#    Updated: 2022/05/05 14:49:42 by nchabli          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,10 +72,8 @@ SRCS =	$(LIBFT)ft_isalnum.c \
 		$(LIBFT)ft_convert_base.c \
 		$(LIBFT)ft_convert_base2.c \
 		$(LIBFT)ft_does_str_contain.c \
-		$(LIBFT)ft_printf.c \
 		$(LIBFT)ft_search_envp_path.c \
-		$(LIBFT)ft_have_print.c \
-		$(LIBFT)ft_putstr.c
+		$(LIBFT)ft_have_print.c
 		
 
 # normal Flags

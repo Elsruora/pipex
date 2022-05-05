@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipex.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nchabli <nchabli@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: nchabli <nchabli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 02:37:17 by nchabli           #+#    #+#             */
-/*   Updated: 2022/05/03 16:38:07 by nchabli          ###   ########lyon.fr   */
+/*   Updated: 2022/05/05 14:53:35 by nchabli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void	init_g(int ac, char **av, char **envp, t_pipex *g)
 	int		fd[2];
 	char	*str;
 
+	str = NULL;
 	g->argc = ac;
 	g->argv = av;
 	g->envp = envp;
@@ -63,7 +64,7 @@ void	init_g(int ac, char **av, char **envp, t_pipex *g)
 		pipe(fd);
 		while (str != g->limiter || str == NULL)
 			str = get_next_line(STDIN_FILENO);
-			ft_putstr_fd(str, fd[1]);
+			ft_putstr_fd(str, fd[1], 0);
 		g->infile = fd[0];
 	}
 	else
@@ -93,8 +94,8 @@ int	main(int ac, char **av, char **envp)
 	}
 	else
 	{
-		ft_putstr("\033[31mError: usage: \"\
-./pipex file1 cmd1 cmd2 (...) file2\"\n");
+		ft_putstr_fd("\033[31mError: usage: \"\
+./pipex file1 cmd1 cmd2 (...) file2\"\n", 0, 0);
 		exit(EXIT_FAILURE);
 	}
 	close(g.infile);

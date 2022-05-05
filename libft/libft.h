@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nchabli <nchabli@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: nchabli <nchabli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 19:25:58 by nchabli           #+#    #+#             */
-/*   Updated: 2022/05/03 16:36:50 by nchabli          ###   ########lyon.fr   */
+/*   Updated: 2022/05/05 14:49:33 by nchabli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
+void	ft_putchar_fd(char c, int fd, int *c_count);
+void	ft_putstr_fd(char *s, int fd, int *c_count);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(long n, int fd, int *c_count);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
@@ -71,9 +71,8 @@ void	ft_putnbr_fd_hexa(unsigned long n, int fd, int *c_count, char *base);
 int		ft_does_str_contain(char *str, char *strc);
 void	strputter(char *s, int *c_count);
 void	write_with_args(char c, va_list params, int *c_count);
-int		ft_printf(const char *str, ...);
+int		ft_putchar(int c);
 char	*ft_search_envp_path(char **envp);
 int		ft_have_print(char *str);
-void	ft_putstr(char *s);
 
 #endif
